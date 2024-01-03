@@ -8,11 +8,15 @@ import currencyToSymbolMap from 'currency-symbol-map/map'
 
 function DropdownMenu() {
     const [isOpen, setIsOpen] = useState(false)
+    const [choice, setChoice] = useState("null");
     
     const changeOpen = () => {
         // console.log(currencyToSymbolMap) uncomment this to see all the currency abbreviations
         setIsOpen(!isOpen);
-        
+    }
+    const buttonClick = (item) => {
+        console.log(item.currency + " clicked");
+        setChoice(item.currency);
     }
   return (
     <div className="dropdown">
@@ -22,13 +26,14 @@ function DropdownMenu() {
         {isOpen && (
             <div className="dropdown-menu">
                 {options.map((item,i) => (
-                    <div className="li"key={i}>
-                    <p>{item.currency}[ {getSymbolFromCurrency(item.abbreviation)} ]</p>
+                    <div className="li"key={i} >
+                    <button onClick={() => buttonClick(item)}> {/* Use a callback function here so that it isnt executed instantly*/ }
+                            {item.currency} [ {getSymbolFromCurrency(item.abbreviation)} ]
+                        </button>
                     </div>
                 ))}
             </div>
         )}
-
     </div>
   )
 }
