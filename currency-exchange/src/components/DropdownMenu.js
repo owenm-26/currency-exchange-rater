@@ -1,19 +1,37 @@
-import Dropdown from 'react-bootstrap/Dropdown';
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import options from "../options.json";
+import "../styles/DropdownMenu.css";
+import { useState } from "react";
+import getSymbolFromCurrency from 'currency-symbol-map'
+import currencyToSymbolMap from 'currency-symbol-map/map'
 
-function BasicExample() {
+
+function DropdownMenu() {
+    const [isOpen, setIsOpen] = useState(false)
+    
+    const changeOpen = () => {
+        // console.log(currencyToSymbolMap) uncomment this to see all the currency abbreviations
+        setIsOpen(!isOpen);
+        
+    }
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Dropdown Button
-      </Dropdown.Toggle>
+    <div className="dropdown">
+        <button className="button" onClick={changeOpen}>Dropdown
+        { !isOpen ? (<IoMdArrowDropdown/> ) : (<IoMdArrowDropup/>)}
+        </button>
+        {isOpen && (
+            <div className="dropdown-menu">
+                {options.map((item,i) => (
+                    <div className="li"key={i}>
+                    <p>{item.currency}[ {getSymbolFromCurrency(item.abbreviation)} ]</p>
+                    </div>
+                ))}
+            </div>
+        )}
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-  );
+    </div>
+  )
 }
 
-export default BasicExample;
+export default DropdownMenu
+

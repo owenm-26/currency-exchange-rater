@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 // import Dropdown from 'react-dropdown';
 // import 'react-dropdown/style.css';
 import DropdownMenu from '../components/DropdownMenu.js';
 
 function Exchange() {
-    const options = [
-        'one', 'two', 'three'
-      ];
+    // const options = [
+    //     'one', 'two', 'three'
+    //   ];
 
-    const [choice, setChoice] = useState();
+    // const [choice, setChoice] = useState();
 
-    const handleChoice = (event) =>{
-        setChoice(event.target.value);
-        console.log("choice is " + choice);
-    };
+    // const handleChoice = (event) =>{
+    //     setChoice(event.target.value);
+    //     console.log("choice is " + choice);
+    // };
   return (
     <div>
         <DropdownMenu/>

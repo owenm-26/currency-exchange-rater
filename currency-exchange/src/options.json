@@ -1,0 +1,18 @@
+[
+    {
+        "currency": "US Dollar",
+        "abbreviation": "USD"
+    },
+    {
+        "currency": "Euro",
+        "abbreviation": "EUR"
+    },
+    {
+        "currency": "Canadian Dollar",
+        "abbreviation": "CAD"
+    },
+    {
+        "currency": "Japanese Yen",
+        "abbreviation": "JPY"
+    }
+]
