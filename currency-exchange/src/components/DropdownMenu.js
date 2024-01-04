@@ -3,12 +3,12 @@ import options from "../options.json";
 import "../styles/DropdownMenu.css";
 import { useState } from "react";
 import getSymbolFromCurrency from 'currency-symbol-map'
-import currencyToSymbolMap from 'currency-symbol-map/map'
+//import currencyToSymbolMap from 'currency-symbol-map/map'
 
 
-function DropdownMenu() {
+function DropdownMenu({onSelect}) {
     const [isOpen, setIsOpen] = useState(false)
-    const [choice, setChoice] = useState("null");
+    // const [choice, setChoice] = useState("null");
     
     const changeOpen = () => {
         // console.log(currencyToSymbolMap) uncomment this to see all the currency abbreviations
@@ -16,7 +16,8 @@ function DropdownMenu() {
     }
     const buttonClick = (item) => {
         console.log(item.currency + " clicked");
-        setChoice(item.currency);
+        onSelect(item.currency);
+        // setChoice(item.currency);
     }
   return (
     <div className="dropdown">
@@ -35,6 +36,9 @@ function DropdownMenu() {
             </div>
         )}
     </div>
+    // <div className="">
+
+    // </div>
   )
 }
 
