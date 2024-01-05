@@ -17,7 +17,6 @@ function Exchange() {
     <div className='body'>
       <DropdownMenu onSelect={handleDropdownClick} />
       <Exchanger selectedValue={selectedValue} />
-        
     </div>
   )
 }
