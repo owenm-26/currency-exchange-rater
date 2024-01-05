@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Freecurrencyapi from '@everapi/freecurrencyapi-js';
-
+import '../App.css';
 
 
 
@@ -35,14 +35,13 @@ function Exchanger(selectedValue) {
           // console.log("Conversion from USD to " + selectedValue + ": " + conversion) 
     // }
   return (
-    <div>
+    <div className='input-box'>
         <label>
         USD
         <input name="input" />
       </label>
       <button 
       onClick={() => {
-            console.log(JSON.stringify(selectedValue.selectedValue));
             const sVNew = selectedValue.selectedValue;
             console.log(typeof selectedValue);
           const freecurrencyapi = new Freecurrencyapi('fca_live_MsKvEUTvWNYdjo5jisGitqAWigCcvzTpw7xoKSNi');
@@ -56,9 +55,9 @@ function Exchanger(selectedValue) {
               console.log("conversion: " + conversion);
           });
 
-          }
-      
-    }>Click Me</button>
+          } 
+    }
+    >Click Me</button>
 
     </div>
   )

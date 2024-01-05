@@ -1,7 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .App {
   text-align: center;
+  background-color: white;
 }
+
+.header {
+  background-color: #f0f0f0;
+}
+
+.footer {
+  background-color: #f0f0f0;
+}
+
+.body{
+  height: 500px;
+  background-color: white;
+}
+
+/* .input-box{
+  padding-top: 200px;
+  position: fixed;
+} */

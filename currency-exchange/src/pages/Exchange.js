@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import DropdownMenu from '../components/DropdownMenu.js';
 import Exchanger from '../components/Exchanger.js';
+import '../App.css';
 
 function Exchange() {
   const [selectedValue, setSelectedValue] = useState('USD');
@@ -13,7 +14,7 @@ function Exchange() {
   };
     
   return (
-    <div>
+    <div className='body'>
       <DropdownMenu onSelect={handleDropdownClick} />
       <Exchanger selectedValue={selectedValue} />
         
