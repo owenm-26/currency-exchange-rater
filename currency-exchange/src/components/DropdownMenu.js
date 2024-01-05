@@ -16,7 +16,8 @@ function DropdownMenu({onSelect}) {
     }
     const buttonClick = (item) => {
         console.log(item.currency + " clicked");
-        onSelect(item.currency);
+        onSelect(item.abbreviation);
+        console.log(item.abbreviation + " ------------");
         // setChoice(item.currency);
     }
   return (

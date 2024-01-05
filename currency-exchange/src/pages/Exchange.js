@@ -6,7 +6,7 @@ import DropdownMenu from '../components/DropdownMenu.js';
 import Exchanger from '../components/Exchanger.js';
 
 function Exchange() {
-  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedValue, setSelectedValue] = useState('USD');
 
   const handleDropdownClick = (value) => {
     setSelectedValue(value);
