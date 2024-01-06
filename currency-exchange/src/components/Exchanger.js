@@ -14,6 +14,22 @@ function Exchanger(selectedValue) {
       setCurrencyAmount(input);
   } 
 
+  const handleConversion = async () => {
+    const sVNew = selectedValue.selectedValue;
+    const freecurrencyapi = new Freecurrencyapi('fca_live_MsKvEUTvWNYdjo5jisGitqAWigCcvzTpw7xoKSNi');
+    
+    try{
+      const response = await freecurrencyapi.latest({
+        base_currency: 'USD',
+        currencies: sVNew,
+      });
+      setConversion(response.data[sVNew]);
+      setActivated(true); {/*Do this after so that the result is only displayed once conversion is properly set */}
+    }catch(error){
+      console.error('Error assigning conversion ' + error);
+    }
+  }
+
   return (
     <div className='input-box'>
         <label>
@@ -22,20 +38,7 @@ function Exchanger(selectedValue) {
       </label>
       <button 
       onClick={() => {
-        saveValue()
-        setActivated(true);
-          const sVNew = selectedValue.selectedValue;
-          const freecurrencyapi = new Freecurrencyapi('fca_live_MsKvEUTvWNYdjo5jisGitqAWigCcvzTpw7xoKSNi');
-
-            freecurrencyapi.latest({
-              base_currency: 'USD',
-              currencies: sVNew
-          }).then(response => {
-              setConversion(response.data[sVNew]);
-          });
-          
-          } 
-    }
+        saveValue(); handleConversion();}}
     >Click Me</button>
     {activated && 
       <div className='convertedValue'>
