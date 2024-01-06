@@ -32,13 +32,15 @@ function Exchanger(selectedValue) {
               currencies: sVNew
           }).then(response => {
               setConversion(response.data[sVNew]);
-              console.log(response.data[sVNew]);
           });
           
           } 
     }
     >Click Me</button>
-    {activated && <h1>result: {conversion * currencyAmount}</h1>}
+    {activated && 
+      <div className='convertedValue'>
+        <h1>result: {conversion * currencyAmount}</h1> {/* if the user has ever converted something, show  conversion */}
+      </div>}
     </div>
   )
     }
