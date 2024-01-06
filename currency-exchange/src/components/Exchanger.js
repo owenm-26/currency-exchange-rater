@@ -33,7 +33,7 @@ function Exchanger(selectedValue) {
   return (
     <div className='input-box'>
         <label>
-        USD
+        <p>USD -&gt; {selectedValue.selectedValue}</p>
         <input type="number" placeholder="Enter numeric value" id="userInput" />
       </label>
       <button 

@@ -14,33 +14,28 @@ function DropdownMenu({onSelect}) {
         setIsOpen(!isOpen);
     }
     const buttonClick = (item) => {
-        console.log(item.currency + " clicked");
         onSelect(item.abbreviation);
-        console.log(item.abbreviation + " ------------");
         setIsOpen(!isOpen);
     }
   return (
     <div className="wrapper">
-    <div className="dropdown">
-        <button className="button" onClick={changeOpen}>Dropdown
-        { !isOpen ? (<IoMdArrowDropdown/> ) : (<IoMdArrowDropup/>)}
-        </button>
-        {isOpen && (
-            <div className="dropdown-menu">
-                {options.map((item,i) => (
-                    <div className="li"key={i} >
-                    <button onClick={() => buttonClick(item)}> {/* Use a callback function here so that it isnt executed instantly*/ }
-                            {item.currency} [ {getSymbolFromCurrency(item.abbreviation)} ]
-                        </button>
-                    </div>
-                ))}
-            </div>
-        )}
+        <div className="dropdown">
+            <button className="button" onClick={changeOpen}>Dropdown
+            { !isOpen ? (<IoMdArrowDropdown/> ) : (<IoMdArrowDropup/>)}
+            </button>
+            {isOpen && (
+                <div className="dropdown-menu">
+                    {options.map((item,i) => (
+                        <div className="li"key={i} >
+                        <button onClick={() => buttonClick(item)}> {/* Use a callback function here so that it isnt executed instantly*/ }
+                                {item.currency} [ {getSymbolFromCurrency(item.abbreviation)} ]
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
     </div>
-    </div>
-    // <div className="">
-
-    // </div>
   )
 }
 

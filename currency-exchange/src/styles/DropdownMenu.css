@@ -1,13 +1,15 @@
 /* styles.css */
-.wrapper{
-  background-color: white;
+/* .wrapper{
+  background-image: linear-gradient(#f0f0f0, #729B79);;
+  background-color: #729B79;
   height: 300px;
-}
+} */
 
 .dropdown {
     width: 40%;
     position: relative;
     display: inline-block;
+    background-color: green;
   }
   
   .dropdown button {
@@ -15,13 +17,14 @@
     width: 100%;
     padding: 10px;
     cursor: pointer;
-    background-color: #FFFFFf;
+    background-color: #f0f0f0;
     border-radius: 0%;
   }
   
   .dropdown-menu {
-    position: relative;
+    position: absolute;
     left:0%;
+    width: 99%;
     top: 100%;
     list-style: none;
     padding: 0;
