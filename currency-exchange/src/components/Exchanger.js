@@ -7,11 +7,12 @@ import '../App.css';
 function Exchanger(selectedValue) {
     const [conversion, setConversion] = useState(0);
     const [currencyAmount, setCurrencyAmount] = useState(0)
+    const [activated, setActivated] = useState(false);
 
     const saveValue = () => {
       var input = document.getElementById("userInput").value;
       setCurrencyAmount(input);
-  }
+  } 
 
   return (
     <div className='input-box'>
@@ -22,6 +23,7 @@ function Exchanger(selectedValue) {
       <button 
       onClick={() => {
         saveValue()
+        setActivated(true);
           const sVNew = selectedValue.selectedValue;
           const freecurrencyapi = new Freecurrencyapi('fca_live_MsKvEUTvWNYdjo5jisGitqAWigCcvzTpw7xoKSNi');
 
@@ -36,7 +38,7 @@ function Exchanger(selectedValue) {
           } 
     }
     >Click Me</button>
-
+    {activated && <h1>result: {conversion * currencyAmount}</h1>}
     </div>
   )
     }
