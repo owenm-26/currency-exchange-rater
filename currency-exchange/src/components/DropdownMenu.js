@@ -20,7 +20,7 @@ function DropdownMenu({onSelect}) {
   return (
     <div className="wrapper">
         <div className="dropdown">
-            <button className="button" onClick={changeOpen}>Dropdown
+            <button className="button" onClick={changeOpen}>Choose Currency
             { !isOpen ? (<IoMdArrowDropdown/> ) : (<IoMdArrowDropup/>)}
             </button>
             {isOpen && (

@@ -34,12 +34,12 @@ function Exchanger(selectedValue) {
     <div className='input-box'>
         <label>
         <p>USD -&gt; {selectedValue.selectedValue}</p>
-        <input type="number" placeholder="Enter numeric value" id="userInput" />
+        <input type="number" placeholder="0.00" id="userInput" className='userInput'/>
       </label>
       <button 
       onClick={() => {
-        saveValue(); handleConversion();}}
-    >Click Me</button>
+        saveValue(); handleConversion();}} className='convert-button'
+    >Convert</button>
     {activated && 
       <div className='convertedValue'>
         <h1>result: {conversion * currencyAmount}</h1> {/* if the user has ever converted something, show  conversion */}
