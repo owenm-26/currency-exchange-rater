@@ -22,18 +22,17 @@ function Exchanger(selectedValue) {
       <button 
       onClick={() => {
         saveValue()
-            const sVNew = selectedValue.selectedValue;
+          const sVNew = selectedValue.selectedValue;
           const freecurrencyapi = new Freecurrencyapi('fca_live_MsKvEUTvWNYdjo5jisGitqAWigCcvzTpw7xoKSNi');
 
             freecurrencyapi.latest({
               base_currency: 'USD',
               currencies: sVNew
           }).then(response => {
-              setConversion(response.data);
-              console.log("response: " + response);
-              console.log("conversion: " + conversion);
+              setConversion(response.data[sVNew]);
+              console.log(response.data[sVNew]);
           });
-
+          
           } 
     }
     >Click Me</button>
