@@ -42,7 +42,7 @@ function Exchanger(selectedValue) {
     >Convert</button>
     {activated && 
       <div className='convertedValue'>
-        <h1>result: {conversion * currencyAmount}</h1> {/* if the user has ever converted something, show  conversion */}
+        <h1>{currencyAmount} USD =  {conversion * currencyAmount} {selectedValue.selectedValue}</h1> {/* if the user has ever converted something, show  conversion */}
       </div>}
     </div>
   )
